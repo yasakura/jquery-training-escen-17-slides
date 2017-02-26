@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>jQuery - 1ère partie</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/myStyles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>jQuery <br>
+          Première partie</h1>
+          <p><small>Cours pour l'<a href="https://www.escen.fr/">ESCEN Paris</a> - 2017</small></p>
+
+        </section>
+
+        <section>
+          <h2>Salut !</h2>
+
+          <ul>
+            <li>Lionel JAMAL</li>
+            <li>Développeur Front-End</li>
+            <li>De formation autodidacte</li>
+            <li>J'ai commencé à faire du web il y a 8 ans</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Ce qu'on va voir ensemble :</h2>
+          <ul>
+            <li>Installation jQuery</li>
+            <li>Isoler son code JS</li>
+            <li>Selection d'éléments du DOM</li>
+            <li>Modification du HTML</li>
+            <li>Gérer des évenements utilisateurs</li>
+            <li>Créer des animations</li>
+            <li>Utiliser AJAX</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Méthodologie</h2>
+
+          <p>Apprentissage par la <strong>pratique</strong> ^^</p>
+        </section>
+
+        <section>
+          <h2>Installer jQuery</h2>
+
+          <p>À vous de jouer</p>
+
+          <ul>
+            <li>Installer Sublime Text et le plugin Emmet</li>
+            <li>Créer une page HTML</li>
+            <li>Importer jQuery</li>
+            <li>Vérifiez que jQuery est bien chargé grâce à ce code</li>
+          </ul>
+          <pre><code>if (typeof jQuery == 'undefined') {
+  console.log('jQuery hasn\'t loaded');
+} else {
+  console.log('jQuery has loaded');
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Pourquoi jQuery ?</h2>
+        </section>
+
+        <section>
+          <h2>Sélections d'éléments</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Exercices</h2>
+          </section>
+
+          <section>
+            <p>Au chargement de la page, modifiez la couleur de fond en <span class="colorBlue">noir</span>.</p>
+          </section>
+
+          <section>
+            <ul>
+              <li>Créez une classe CSS qui applique un fond <span class="colorBlue">noir</span> à l'élément <span class="colorBlue">body</span></li>
+              <li class="fragment">Appliquez cette classe à l'élément body <span class="colorBlue">avec jQuery</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Exercices</h2>
+          </section>
+
+          <section>
+            <p>Copier ce code dans une nouvelle page</p>
+            <pre><code class="html"><div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua.</p>
+  <p> Ut enim ad minim veniam, quis nostrud exercitation
+  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua.</p>
+  <p> Ut enim ad minim veniam, quis nostrud exercitation
+  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+            </code></pre>
+          </section>
+
+          <section>
+            <ul>
+              <li>Supprimer la première balise &lt;p&gt;</li>
+              <li>Appliquer une couleur à la deuxième balise &lt;p&gt; de la deuxième &lt;div&gt;</li>
+            </ul>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
