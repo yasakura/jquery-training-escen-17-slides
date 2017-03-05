@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>jQuery - Cours pour l'ESCEN Paris - 2017</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/myStyles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+         <section>
+          <h1>jQuery <br>
+          Deuxième partie</h1>
+          <p><small>Cours pour l'<a href="https://www.escen.fr/">ESCEN Paris</a> - 2017</small></p>
+
+        </section>
+
+        <section>
+          <section>
+          <h2>Rappels</h2>
+          </section>
+
+          <section>
+           <h2>Outils</h2>
+            <ul>
+              <li><a href="http://emmet.io/">Emmet</a> - un plugin pour faciliter l'écriture du HTML</li>
+              <li><a href="http://devdocs.io/">Devdocs.io</a> - un site qui regroupe la documentation de plein de langage</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>jQuery - les bases</h2>
+            <p>Pour utiliser jQuery dans votre page web, il faut l'appeler avant la fermeture de la balise &lt;/body&gt; suivie de votre/vos script(s)</p>
+            <pre><code><script src="jquery.min.js"></script>
+<script src="script.js"></script></code></pre>
+          </section>
+
+
+          <section>
+            <p>Dans votre fichier script, vous englobez votre code dans un module pour l'isoler</p>
+            <pre><code>// Méthode 1 (ancienne méthode, évitez de l'utiliser)
+$(document).ready(function() {
+  // Votre code JavaScript
+});
+
+// Méthode 2
+$(function() {
+  // Votre code JavaScript
+});
+
+// Méthode 3 (à préférer, car isole mieux votre code)
+(function($) {
+  // Votre code JavaScript
+})(jQuery);</code></pre>
+          </section>
+
+          <section>
+            <h2>Écrire une instuction</h2>
+            <ul>
+              <li>
+                On sélectionne un élément dans la page</p>
+                <pre><code class="html">$('votre_element')…</code></pre>
+              </li>
+              <li>
+                Ensuite on lui applique une méthode/function</p>
+                <pre><code class="html">$('votre_element').methode(…)</code></pre>
+              </li>
+              <li>On termine l'instruction par un <em>;</em></li>
+              <li>
+                Par exemple, pour ajouter un fond noir à votre page</p>
+                <pre><code class="js">$('body').css('background-color', 'black');</code></pre>
+              </li>
+            </ul>
+
+          </section>
+
+          <section>
+            <p>Vous trouverez toutes les méthodes dans la documentation de jquery, <br>sur le site <a href="http://api.jquery.com/">officiel</a> <br>ou sur le site <a href="http://devdocs.io">Devdocs.io</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Sélectionner des éléments</h2>
+          <p>Avec jQuery il existe plein de sélecteurs différents, vous allez le plus souvent vous baser sur les sélecteurs CSS.</p>
+
+          <pre><code>// sélectionner les éléments qui ont la classe .toto
+$('.toto')…
+
+// sélectionner l'élément qui a l'#id .tata
+$('#tata')…
+
+// sélectionner le footer
+$('footer')…</code></pre>
+        <p>Vous trouverez les autres sélecteurs <a href="http://api.jquery.com/category/selectors/">ici</a>.</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Exercice 1</h2>
+            <ul>
+              <li>Télécharger les fichiers à cette <a href="https://github.com/yasakura/jquery-training-escen-17-src">url</a>.</li>
+              <li>Avec la méthode <em>.attr()</em> modifiez tous les liens et faites les pointer vers la page d'accueil de google.</li>
+              <li>Faites la même chose, mais uniquement sur le troisième lien.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Modification du HTML</h2>
+          </section>
+
+          <section>
+            <h2>Exercice 2</h2>
+            <p>Remplacer le texte du dernier lien par autre chose (exemple : <em>Salut</em>).</p>
+          </section>
+
+          <section>
+            <h2>Exercice 3</h2>
+            <p>Ajouter du texte à la fin de la <em>div#test1</em>.</p>
+          </section>
+
+          <section>
+            <h2>Exercice 4</h2>
+            <p>Ajouter du texte au début de la <em>div#test1</em>.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Les événements utilisateurs</h2>
+            <p>En JavaScript, on peut effectuer quelque chose en réponse à une action d'un utilisateur. <br>
+            Avec jQuery, on fait ça avec <a href="http://api.jquery.com/category/events/">différentes méthodes</a>.</p>
+          </section>
+
+          <section>
+            <h2>Exemple</h2>
+            <pre><code>$(element).click(function() {
+  // Code JS à exécuter en réponse à un clic de souris.
+});</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Exercice 5</h2>
+            <ul>
+              <li>Effacer le code de l'exercice précédent</li>
+              <li>Quand on clique sur un lien, faire en sorte qu'il ait l'apparence <em>active</em></li>
+              <li>Avec les méthodes <em>.hide()</em> et <em>.show()</em> cacher le texte présent et afficher celui qui correspond au lien</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Un peu d'animation</h2>
+          </section>
+
+          <section>
+            <h2>Exercice 6</h2>
+            <p>Maintenant vous allez utiliser les méthodes <em>.fadeOut()</em> et <em>.fadeIn()</em> pour cacher et afficher les textes selon le lien cliqué.</p>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
