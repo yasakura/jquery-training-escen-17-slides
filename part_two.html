@@ -25,37 +25,35 @@
   <body>
     <div class="reveal">
       <div class="slides">
-         <section>
+        <section>
           <h1>jQuery <br>
           Deuxième partie</h1>
           <p><small>Cours pour l'<a href="https://www.escen.fr/">ESCEN Paris</a> - 2017</small></p>
-
         </section>
 
         <section>
-          <section>
-          <h2>Rappels</h2>
-          </section>
+        <h2>Rappels</h2>
+        </section>
 
-          <section>
-           <h2>Outils</h2>
-            <ul>
-              <li><a href="http://emmet.io/">Emmet</a> - un plugin pour faciliter l'écriture du HTML</li>
-              <li><a href="http://devdocs.io/">Devdocs.io</a> - un site qui regroupe la documentation de plein de langage</li>
-            </ul>
-          </section>
+        <section>
+         <h2>Outils</h2>
+          <ul>
+            <li><a href="http://emmet.io/">Emmet</a> - un plugin pour faciliter l'écriture du HTML</li>
+            <li><a href="http://devdocs.io/">Devdocs.io</a> - un site qui regroupe la documentation de plein de langage</li>
+          </ul>
+        </section>
 
-          <section>
-            <h2>jQuery - les bases</h2>
-            <p>Pour utiliser jQuery dans votre page web, il faut l'appeler avant la fermeture de la balise &lt;/body&gt; suivie de votre/vos script(s)</p>
-            <pre><code><script src="jquery.min.js"></script>
+        <section>
+          <h2>jQuery - les bases</h2>
+          <p>Pour utiliser jQuery dans votre page web, il faut l'appeler avant la fermeture de la balise &lt;/body&gt; suivie de votre/vos script(s)</p>
+          <pre><code><script src="jquery.min.js"></script>
 <script src="script.js"></script></code></pre>
-          </section>
+        </section>
 
 
-          <section>
-            <p>Dans votre fichier script, vous englobez votre code dans un module pour l'isoler</p>
-            <pre><code>// Méthode 1 (ancienne méthode, évitez de l'utiliser)
+        <section>
+          <p>Dans votre fichier script, vous englobez votre code dans un module pour l'isoler</p>
+          <pre><code>// Méthode 1 (ancienne méthode, évitez de l'utiliser)
 $(document).ready(function() {
   // Votre code JavaScript
 });
@@ -69,31 +67,30 @@ $(function() {
 (function($) {
   // Votre code JavaScript
 })(jQuery);</code></pre>
-          </section>
+        </section>
 
-          <section>
-            <h2>Écrire une instuction</h2>
-            <ul>
-              <li>
-                On sélectionne un élément dans la page</p>
-                <pre><code class="html">$('votre_element')…</code></pre>
-              </li>
-              <li>
-                Ensuite on lui applique une méthode/function</p>
-                <pre><code class="html">$('votre_element').methode(…)</code></pre>
-              </li>
-              <li>On termine l'instruction par un <em>;</em></li>
-              <li>
-                Par exemple, pour ajouter un fond noir à votre page</p>
-                <pre><code class="js">$('body').css('background-color', 'black');</code></pre>
-              </li>
-            </ul>
+        <section>
+          <h2>Écrire une instuction</h2>
+          <ul>
+            <li>
+              On sélectionne un élément dans la page</p>
+              <pre><code class="html">$('votre_element')…</code></pre>
+            </li>
+            <li>
+              Ensuite on lui applique une méthode/function</p>
+              <pre><code class="html">$('votre_element').methode(…)</code></pre>
+            </li>
+            <li>On termine l'instruction par un <em>;</em></li>
+            <li>
+              Par exemple, pour ajouter un fond noir à votre page</p>
+              <pre><code class="js">$('body').css('background-color', 'black');</code></pre>
+            </li>
+          </ul>
 
-          </section>
+        </section>
 
-          <section>
-            <p>Vous trouverez toutes les méthodes dans la documentation de jquery, <br>sur le site <a href="http://api.jquery.com/">officiel</a> <br>ou sur le site <a href="http://devdocs.io">Devdocs.io</a></p>
-          </section>
+        <section>
+          <p>Vous trouverez toutes les méthodes dans la documentation de jquery, <br>sur le site <a href="http://api.jquery.com/">officiel</a> <br>ou sur le site <a href="http://devdocs.io">Devdocs.io</a></p>
         </section>
 
         <section>
@@ -112,72 +109,219 @@ $('footer')…</code></pre>
         </section>
 
         <section>
-          <section>
-            <h2>Exercice 1</h2>
-            <ul>
-              <li>Télécharger les fichiers à cette <a href="https://github.com/yasakura/jquery-training-escen-17-src">url</a>.</li>
-              <li>Avec la méthode <em>.attr()</em> modifiez tous les liens et faites les pointer vers la page d'accueil de google.</li>
-              <li>Faites la même chose, mais uniquement sur le troisième lien.</li>
-            </ul>
-          </section>
+          <h2>Exercice 1</h2>
+          <ul>
+            <li>Télécharger les fichiers à cette <a href="https://github.com/yasakura/jquery-training-escen-17-src">url</a>.</li>
+            <li>Avec la méthode <em>.attr()</em> modifiez tous les liens et faites les pointer vers la page d'accueil de google.</li>
+            <li>Faites la même chose, mais uniquement sur le troisième lien.</li>
+          </ul>
         </section>
 
         <section>
-          <section>
-            <h2>Modification du HTML</h2>
-          </section>
+          <h2>Solution</h2>
+          <pre><code>// Modifie tous les liens
+$('a').attr('href', 'http://www.google.fr');
 
-          <section>
-            <h2>Exercice 2</h2>
-            <p>Remplacer le texte du dernier lien par autre chose (exemple : <em>Salut</em>).</p>
-          </section>
-
-          <section>
-            <h2>Exercice 3</h2>
-            <p>Ajouter du texte à la fin de la <em>div#test1</em>.</p>
-          </section>
-
-          <section>
-            <h2>Exercice 4</h2>
-            <p>Ajouter du texte au début de la <em>div#test1</em>.</p>
-          </section>
+// Modifie le troisième lien
+$('ul li:nth-child(3) a').attr('href', 'http://www.google.fr');</code></pre>
         </section>
 
         <section>
-          <section>
-            <h2>Les événements utilisateurs</h2>
-            <p>En JavaScript, on peut effectuer quelque chose en réponse à une action d'un utilisateur. <br>
-            Avec jQuery, on fait ça avec <a href="http://api.jquery.com/category/events/">différentes méthodes</a>.</p>
-          </section>
+          <h2>Modification du HTML <br>(avec jQuery)</h2>
+        </section>
 
-          <section>
-            <h2>Exemple</h2>
-            <pre><code>$(element).click(function() {
+        <section>
+          <h2>Exercice 2</h2>
+          <p>Remplacer le texte du dernier lien par autre chose (exemple : <em>Salut</em>).</p>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code>// première solution possible
+$('a:last').text('Salut');
+
+// autre solution
+$('a:last').html('Salut');</code></pre>
+        </section>
+
+        <section>
+          <h2>Exercice 3</h2>
+          <p>Ajouter du texte à la fin de la <em>div#test1</em>.</p>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code class="js">var $div = $('#test1');
+var $p = $('&lt;p&gt;Texte ajouté&lt;p/&gt;');
+
+$div.append($p);</code></pre>
+        </section>
+
+        <section>
+          <h2>Exercice 4</h2>
+          <p>Ajouter du texte au début de la <em>div#test1</em>.</p>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code class="js">var $div = $('#test1');
+var $p = $('&lt;p&gt;Texte ajouté&lt;p/&gt;');
+
+$div.prepend($p);</code></pre>
+        </section>
+
+        <section>
+          <h2>Les événements utilisateurs</h2>
+          <p>En JavaScript, on peut effectuer quelque chose en réponse à une action d'un utilisateur. <br>
+          Avec jQuery, on fait ça avec <a href="http://api.jquery.com/category/events/">différentes méthodes</a>.</p>
+        </section>
+
+        <section>
+          <h2>Exemple</h2>
+          <pre><code>$(element).click(function() {
   // Code JS à exécuter en réponse à un clic de souris.
 });</code></pre>
-          </section>
         </section>
 
         <section>
-          <section>
-            <h2>Exercice 5</h2>
-            <ul>
-              <li>Effacer le code de l'exercice précédent</li>
-              <li>Quand on clique sur un lien, faire en sorte qu'il ait l'apparence <em>active</em></li>
-              <li>Avec les méthodes <em>.hide()</em> et <em>.show()</em> cacher le texte présent et afficher celui qui correspond au lien</li>
-            </ul>
-          </section>
+          <h2>Exercice 5</h2>
+          <ul>
+            <li>Effacer le code de l'exercice précédent</li>
+            <li>Quand on clique sur un lien, faire en sorte qu'il ait l'apparence <em>active</em></li>
+            <li>Avec les méthodes <em>.hide()</em> et <em>.show()</em> cacher le texte présent et afficher celui qui correspond au lien</li>
+          </ul>
         </section>
 
         <section>
-          <section>
-            <h2>Un peu d'animation</h2>
-          </section>
+          <h2>Solution</h2>
+          <pre><code>$('a').click(function() {
+  $('a').removeClass('active');
+  $(this).addClass('active');
 
-          <section>
-            <h2>Exercice 6</h2>
-            <p>Maintenant vous allez utiliser les méthodes <em>.fadeOut()</em> et <em>.fadeIn()</em> pour cacher et afficher les textes selon le lien cliqué.</p>
-          </section>
+  $('.textTab').hide();
+  $($(this).attr('href')).show();
+});</code></pre>
+        </section>
+
+
+        <section>
+          <h2>Un peu d'animation</h2>
+        </section>
+
+        <section>
+          <h2>Exercice 6</h2>
+          <p>Maintenant vous allez utiliser les méthodes <em>.fadeOut()</em> et <em>.fadeIn()</em> pour cacher et afficher les textes selon le lien cliqué.</p>
+        </section>
+
+        <section>
+          <h2>Rappel</h2>
+          <p>La console du navigateur</p>
+        </section>
+
+        <section>
+          <p>Pour l'afficher</p>
+          <ul>
+            <li>sur Windows : touche F12 du clavier</li>
+            <li>sur OSX : touches alt + cmd + i</li>
+          </ul>
+          <p>Cliquer sur l'onglet console</p>
+        </section>
+
+        <section>
+          <h2>Exercice 7</h2>
+          <p>Afficher quelque chose dans la console en insérant la ligne suivante dans le fichier <em>script.js</em></p>
+          <pre><code class="js">console.log('afficher quelque chose');</code></pre>
+        </section>
+
+        <section>
+          <h2>Rappel</h2>
+          <p>Les fonctions</p>
+        </section>
+
+        <section>
+          <p>Une fonction commence par le mot clé <em>function</em> suivie d'un nom si on veut l'appeler plus tard, de parenthèses où l'on peut mettre des arguments et d'accolades.</p>
+          <p>On écrit le code à exécuter entre les accolades.</p>
+          <pre><code class="js">function afficherAlert(argument) {
+  // le code à executer
+  alert(argument);
+}
+
+// on appelle la fonction
+afficherAlert('Coucou !'); // Va afficher 'Coucou !'</code></pre>
+        </section>
+
+        <section>
+          <h2>Exercice 8</h2>
+          <p>Écrire une fonction qui affiche un message dans la console du navigateur.</p>
+        </section>
+
+        <section>
+          <h2>Les tableaux</h2>
+          <p>Les tableaux s'écrivent entre crochets.</p>
+          <pre><code>// Un tableau
+var fruits = ['Pomme', 'Banane', 'Ananas'];</code></pre>
+        </section>
+
+        <section>
+          <h2>Exercice 9</h2>
+          <p>Javascript possède une méthode pour parcourir tous les éléments d'un tableau. Cette méthode c'est <em>forEach()</em>. <br>
+          Copier le tableau <em>fruits</em> de la slide précédente dans le fichier <em>script.js</em> et afficher dans la console chaque élément du tableau.</p>
+        </section>
+
+        <section>
+          <h2>Les objets</h2>
+          <p>Les objets s'écrivent entre accolades, chaque élément d'un tableau doit avoir un couple de clé/valeur.</p>
+          <pre><code>// Un objet
+var individu = { "nom": "Doe", "prenom": "John", "age": 35 };</code></pre>
+        </section>
+
+        <section>
+          <h2>Exercice 10</h2>
+          <p>Copier l'objet <em>individu</em> de la slide précédente dans le fichier <em>script.js</em> et afficher dans la console le prénom de l'individu.</p>
+        </section>
+
+        <section>
+          <h2>AJAX</h2>
+        </section>
+
+        <section>
+          <p>L'AJAX (pour les curieux, la <a href="https://fr.wikipedia.org/wiki/Ajax_(informatique)">page Wikipedia</a>) permet de charger du contenu dans la page sans recharger complètement celle-ci.</p>
+
+          <p>On fait appel à la méthode <em>.ajax()</em> de jquery pour l'utiliser.</p>
+        </section>
+
+        <section>
+          <h2>Exercice 11</h2>
+          <p>Si vous allez à cette <a href="http://jsonplaceholder.typicode.com/users">url</a> vous verrez une liste d'utilisateur. <br>
+          Récupérez cette liste grâce à la méthode <em>.ajax() et affichez là dans la console.</em></p>
+        </section>
+
+        <section>
+          <h2>Exercice 12</h2>
+          <ul>
+            <li>Parcourez le tableau obtenu (<em>data</em>) et affichez dans la console chaque élément de celui-ci.</li>
+            <li>Affichez dans la console uniquement le nom des utilisateurs.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Exercice 13</h2>
+          <ul>
+            <li>Dans le fichier <em>index.html</em>, écrivez ce code dans la div#test1 sous le titre pour créer un bouton
+          <pre><code class="html"><a class="btn" id="button1">button</a></code></pre></li>
+          <li>Affichez la liste d'utilisateur dans la console uniquement au clic sur le bouton</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Exercice 14</h2>
+          <p>Maintenant, au clic sur le bouton, au lieu d'afficher la liste des noms dans la console, vous allez :</p>
+          <ul>
+            <li>supprimer la balise <em>&lt;p&gt;</em> sous le bouton</li>
+            <li>insérer la balise suivante après le bouton
+            <pre><code>&lt;ul id="list"&gt;&lt;/ul&gt;</code></pre></li>
+            <li>créez une balise <em>&lt;li&gt;</em> par nom avec le nom à l'intérieur et les insérer les <em>&lt;li&gt;</em> à la suite dans le ul#list</li>
+          </ul>
         </section>
       </div>
     </div>
