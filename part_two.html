@@ -214,6 +214,20 @@ $div.prepend($p);</code></pre>
         </section>
 
         <section>
+          <h2>Solution</h2>
+          <pre><code>$('a').click(function() {
+  var $target = $($(this).attr('href'));
+
+  $('a').removeClass('active');
+  $(this).addClass('active');
+
+  $target.siblings(':visible').fadeOut(500, function() {
+    $target.fadeIn(500);
+  })
+});</code></pre>
+        </section>
+
+        <section>
           <h2>Rappel</h2>
           <p>La console du navigateur</p>
         </section>
@@ -256,6 +270,15 @@ afficherAlert('Coucou !'); // Va afficher 'Coucou !'</code></pre>
         </section>
 
         <section>
+          <h2>Solution</h2>
+          <pre><code class="js">function afficherMessage(argument) {
+  console.log(argument);
+}
+
+afficherMessage('Coucou !');</code></pre>
+        </section>
+
+        <section>
           <h2>Les tableaux</h2>
           <p>Les tableaux s'écrivent entre crochets.</p>
           <pre><code>// Un tableau
@@ -269,6 +292,15 @@ var fruits = ['Pomme', 'Banane', 'Ananas'];</code></pre>
         </section>
 
         <section>
+          <h2>Solution</h2>
+          <pre><code>var fruits = ['Pomme', 'Banane', 'Ananas'];
+
+fruits.forEach(function(element) {
+  console.log(element);
+});</code></pre>
+        </section>
+
+        <section>
           <h2>Les objets</h2>
           <p>Les objets s'écrivent entre accolades, chaque élément d'un tableau doit avoir un couple de clé/valeur.</p>
           <pre><code>// Un objet
@@ -278,6 +310,13 @@ var individu = { "nom": "Doe", "prenom": "John", "age": 35 };</code></pre>
         <section>
           <h2>Exercice 10</h2>
           <p>Copier l'objet <em>individu</em> de la slide précédente dans le fichier <em>script.js</em> et afficher dans la console le prénom de l'individu.</p>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code>var individu = { "nom": "Doe", "prenom": "John", "age": 35 };
+
+console.log(individu.prenom);</code></pre>
         </section>
 
         <section>
@@ -297,11 +336,39 @@ var individu = { "nom": "Doe", "prenom": "John", "age": 35 };</code></pre>
         </section>
 
         <section>
+          <h2>Solution</h2>
+          <pre><code>$.ajax({
+  url: "http://jsonplaceholder.typicode.com/users"
+}).done(function(data) {
+  console.log(data);
+}).fail(function() {
+  console.log('erreur de chargement');
+});</code></pre>
+        </section>
+
+        <section>
           <h2>Exercice 12</h2>
           <ul>
             <li>Parcourez le tableau obtenu (<em>data</em>) et affichez dans la console chaque élément de celui-ci.</li>
             <li>Affichez dans la console uniquement le nom des utilisateurs.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code>$.ajax({
+  url: "http://jsonplaceholder.typicode.com/users"
+}).done(function(data) {
+  data.forEach(function(element) {
+    // affiche les éléments en entier
+    console.log(element);
+
+    // affiche le nom des utilisateurs
+    console.log(element.name);
+  });
+}).fail(function() {
+  console.log('erreur de chargement');
+});</code></pre>
         </section>
 
         <section>
@@ -314,6 +381,21 @@ var individu = { "nom": "Doe", "prenom": "John", "age": 35 };</code></pre>
         </section>
 
         <section>
+          <h2>Solution</h2>
+          <pre><code>$('#button1').click(function() {
+  $.ajax({
+    url: "http://jsonplaceholder.typicode.com/users"
+  }).done(function(data) {
+    data.forEach(function(element) {
+      console.log(element.name);
+    });
+  }).fail(function() {
+    console.log('erreur de chargement');
+  });
+});</code></pre>
+        </section>
+
+        <section>
           <h2>Exercice 14</h2>
           <p>Maintenant, au clic sur le bouton, au lieu d'afficher la liste des noms dans la console, vous allez :</p>
           <ul>
@@ -322,6 +404,23 @@ var individu = { "nom": "Doe", "prenom": "John", "age": 35 };</code></pre>
             <pre><code>&lt;ul id="list"&gt;&lt;/ul&gt;</code></pre></li>
             <li>créez une balise <em>&lt;li&gt;</em> par nom avec le nom à l'intérieur et les insérer les <em>&lt;li&gt;</em> à la suite dans le ul#list</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre><code>$('#button1').click(function() {
+  $.ajax({
+    url: "http://jsonplaceholder.typicode.com/users"
+  }).done(function(data) {
+    $('#button1 + p').remove();
+    $('#test1').append('&lt;ul id="list"&gt;&lt;/ul&gt;');
+    data.forEach(function(element) {
+      $('#list').append($('&lt;li&gt;').text(element.name));
+    });
+  }).fail(function() {
+    console.log('erreur de chargement');
+  });
+});</code></pre>
         </section>
       </div>
     </div>
